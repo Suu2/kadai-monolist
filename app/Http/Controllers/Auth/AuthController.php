@@ -25,6 +25,8 @@ class AuthController extends Controller
     
     // postRegister()の最後に呼ばれる
     protected $redirectTo = '/';
+    // ログイン失敗した時のリダイレクト先
+    protected $loginPath = '/login';
     
     /**
      * Create a new authentication controller instance.
