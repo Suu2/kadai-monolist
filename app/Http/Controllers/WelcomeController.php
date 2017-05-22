@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+// lesson13 9.6後エラーが出たので設定
+use App\Item;
+
 class WelcomeController extends Controller
 {
     /**
@@ -17,7 +20,10 @@ class WelcomeController extends Controller
     public function index()
     {
         //
-        return view('welcome');        
+        $items = Item::orderBy('updated_at', 'desc')->paginate(20);
+        return view('welcome', [
+            'items' => $items,    
+        ]);        
     }
 
 }

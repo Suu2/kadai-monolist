@@ -15,7 +15,7 @@ avbar-collapse-1" aria-expanded="false">
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
                         <li>
-                            <a href="{!! route(items.create) !!}}">
+                            <a href="{{ route('items.create') }}">
                                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                                 アイテムを追加
                               </a>
@@ -30,7 +30,7 @@ avbar-collapse-1" aria-expanded="false">
                             </a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="#">マイページ</a>
+                                    <a href="{{ route('users.show', Auth::user()->id) }}">マイページ</a>
                                 </li>
                                 <li role="separator" class="divider"></li>
                                 <li>
@@ -41,7 +41,7 @@ avbar-collapse-1" aria-expanded="false">
                     
                     @else
                         <li><a href="{{ route('signup.get') }}">新規登録</a></li>
-                        <li><a href="#">ログイン</a></li>
+                        <li><a href="{{ route('login.get') }}">ログイン</a></li>
                     @endif
                 </ul>
             </div>

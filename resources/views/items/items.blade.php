@@ -8,7 +8,13 @@
                             <img src="{{ $item->image_url }}" alt="">
                         </div>
                         <div class="panel-body">
-                            <p class="item-title"><a href="#">{{ $item->name }}</a></p>
+                            <p class="item-title"><a href="{{ route('items.show', $item->id) }}">{{ $item->name }}</a></p>
+                            <div class="buttons text-center">
+                                @if (Auth::check())
+                                    @include('items.want_button', ['item' => $item])
+                                    @include('items.have_button', ['item' => $item])
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
