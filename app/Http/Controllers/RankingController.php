@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+// lesson13 10で追加
+use App\Item;
+
 class RankingController extends Controller
 {
     public function want()
