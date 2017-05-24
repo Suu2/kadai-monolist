@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Wantランキング</h1>
-    <?php $type = 'want'; ?>
+    <h1>Haveランキング</h1>
+    <?php $type = 'have'; ?>
     @include('items.items', ['items', $items])
 @endsection
